@@ -4,6 +4,9 @@ from django.db import models
 class League(models.Model):
     league_name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.league_name
+
 class Team(models.Model):
     league = models.ForeignKey(League, on_delete=models.CASCADE, null=True)
     team_name = models.CharField(max_length=100)
