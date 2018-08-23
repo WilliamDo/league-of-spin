@@ -8,7 +8,7 @@ class League(models.Model):
         return self.league_name
 
 class Team(models.Model):
-    league = models.ForeignKey(League, on_delete=models.CASCADE, null=True)
+    league = models.ForeignKey(League, on_delete=models.CASCADE)
     team_name = models.CharField(max_length=100)
 
     def __str__(self):
