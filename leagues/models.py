@@ -1,7 +1,11 @@
 from django.db import models
 
 # Create your models here.
+class League(models.Model):
+    league_name = models.CharField(max_length=100)
+
 class Team(models.Model):
+    league = models.ForeignKey(League, on_delete=models.CASCADE, null=True)
     team_name = models.CharField(max_length=100)
 
     def __str__(self):
