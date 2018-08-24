@@ -9,7 +9,7 @@
 
     {% for team in teams %}
     <tr>
-        <td>TODO</td>
+        <td>{{ forloop.counter }}</td>
         <td>{{ team.team_name }}</td>
         <td>{{ team.count_matches_for }}</td>
         <td>{{ team.count_matches_against }}</td>
