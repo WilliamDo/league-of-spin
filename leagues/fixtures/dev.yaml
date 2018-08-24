@@ -91,6 +91,13 @@
     team: 2
     first_name: Mike
     last_name: Harris
+- model: leagues.player
+  pk: 7
+  fields:
+    team: 3
+    first_name: Lee
+    last_name: Marson
+
 ################################################################################
 # Fixture
 ################################################################################
@@ -101,6 +108,14 @@
     home_team: 1
     away_team: 2
     date: 2017-10-01
+
+- model: leagues.fixture
+  pk: 2
+  fields:
+    division: 1
+    home_team: 2
+    away_team: 3
+    date: 2017-10-08
 
 ################################################################################
 # Match
@@ -159,6 +174,18 @@
     fixture: 1
     home_player: 3
     away_player: 6
+- model: leagues.match
+  pk: 10
+  fields:
+    fixture: 2
+    home_player: 5
+    away_player: 7
+- model: leagues.match
+  pk: 11
+  fields:
+    fixture: 2
+    home_player: 6
+    away_player: 7
 
 ################################################################################
 # Game

@@ -10,4 +10,5 @@ def index(request):
 def table(request, division_id):
     division = get_object_or_404(Division, pk=division_id)
     teams = division.team_set.all()
-    return render(request, 'leagues/table.html', {'teams': teams})
+    sorted_teams = sorted(teams, key=lambda t: t.count_matches_for(), reverse=True)
+    return render(request, 'leagues/table.html', {'teams': sorted_teams})
