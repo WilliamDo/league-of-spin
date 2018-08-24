@@ -38,8 +38,8 @@ class Player(models.Model):
 
 class Fixture(models.Model):
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
-    home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='home_team')
-    away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='away_team')
+    home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='home_fixtures')
+    away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='away_fixtures')
     date = models.DateField()
 
     def __str__(self):
@@ -47,8 +47,8 @@ class Fixture(models.Model):
 
 class Match(models.Model):
     fixture = models.ForeignKey(Fixture, on_delete=models.CASCADE)
-    home_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='home_player')
-    away_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='away_player')
+    home_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='home_matches')
+    away_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='away_matches')
 
 class Game(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE)
