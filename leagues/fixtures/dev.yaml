@@ -173,56 +173,56 @@
 - model: leagues.game
   pk: 2
   fields:
-    match: 1
+    match: 2
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 3
   fields:
-    match: 1
+    match: 3
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 4
   fields:
-    match: 1
+    match: 4
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 5
   fields:
-    match: 1
+    match: 5
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 6
   fields:
-    match: 1
+    match: 6
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 7
   fields:
-    match: 1
+    match: 7
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 8
   fields:
-    match: 1
+    match: 8
     game_number: 1
     home_score: 11
     away_score: 9
 - model: leagues.game
   pk: 9
   fields:
-    match: 1
+    match: 9
     game_number: 1
-    home_score: 11
-    away_score: 9
+    home_score: 9
+    away_score: 11
