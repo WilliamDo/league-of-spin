@@ -5,7 +5,7 @@ from .models import Fixture, Match, Team
 # Create your tests here.
 
 class FooTests(TestCase):
-    fixtures = ['dev']
+    fixtures = ['test']
 
     def test_get_winner_home(self):
         match = Match.objects.get(pk=1)
