@@ -19,7 +19,7 @@ class Division(models.Model):
     division_number = models.IntegerField()
 
     def __str__(self):
-        return f'Division {self.division_number}'
+        return f'{self.season.league.league_name} - Division {self.division_number}'
 
 class Team(models.Model):
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
@@ -40,5 +40,18 @@ class Fixture(models.Model):
     division = models.ForeignKey(Division, on_delete=models.CASCADE)
     home_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='home_team')
     away_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='away_team')
+    date = models.DateField()
+
+    def __str__(self):
+        return f'{self.home_team.team_name} vs. {self.away_team.team_name}'
+
+class Match(models.Model):
+    fixture = models.ForeignKey(Fixture, on_delete=models.CASCADE)
+    home_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='home_player')
+    away_player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='away_player')
+
+class Game(models.Model):
+    match = models.ForeignKey(Match, on_delete=models.CASCADE)
+    game_number = models.IntegerField()
     home_score = models.IntegerField()
     away_score = models.IntegerField()

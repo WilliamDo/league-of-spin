@@ -1,3 +1,6 @@
+################################################################################
+# League
+################################################################################
 - model: leagues.league
   pk: 1
   fields:
@@ -6,21 +9,33 @@
   pk: 2
   fields:
     league_name: Central London
+
+################################################################################
+# Season
+################################################################################
 - model: leagues.season
   pk: 1
   fields:
     league: 1
-    date_start: 2017-09-01 00:00:00
+    date_start: 2017-09-01
 - model: leagues.season
   pk: 2
   fields:
     league: 1
-    date_start: 2018-09-01 00:00:00
+    date_start: 2018-09-01
+
+################################################################################
+# Division
+################################################################################
 - model: leagues.division
   pk: 1
   fields:
     season: 1
     division_number: 1
+
+################################################################################
+# Team
+################################################################################
 - model: leagues.team
   pk: 1
   fields:
@@ -36,3 +51,178 @@
   fields:
     division: 1
     team_name: Mossford C
+
+################################################################################
+# Player
+################################################################################
+- model: leagues.player
+  pk: 1
+  fields:
+    team: 1
+    first_name: Matt
+    last_name: Spero
+- model: leagues.player
+  pk: 2
+  fields:
+    team: 1
+    first_name: Keith
+    last_name: Lesser
+- model: leagues.player
+  pk: 3
+  fields:
+    team: 1
+    first_name: Dider
+    last_name: Ngoma
+- model: leagues.player
+  pk: 4
+  fields:
+    team: 2
+    first_name: Tony
+    last_name: Cantale
+- model: leagues.player
+  pk: 5
+  fields:
+    team: 2
+    first_name: Colin
+    last_name: Green
+- model: leagues.player
+  pk: 6
+  fields:
+    team: 2
+    first_name: Mike
+    last_name: Harris
+################################################################################
+# Fixture
+################################################################################
+- model: leagues.fixture
+  pk: 1
+  fields:
+    division: 1
+    home_team: 1
+    away_team: 2
+    date: 2017-10-01
+
+################################################################################
+# Match
+################################################################################
+- model: leagues.match
+  pk: 1
+  fields:
+    fixture: 1
+    home_player: 1
+    away_player: 4
+- model: leagues.match
+  pk: 2
+  fields:
+    fixture: 1
+    home_player: 1
+    away_player: 5
+- model: leagues.match
+  pk: 3
+  fields:
+    fixture: 1
+    home_player: 1
+    away_player: 6
+- model: leagues.match
+  pk: 4
+  fields:
+    fixture: 1
+    home_player: 2
+    away_player: 4
+- model: leagues.match
+  pk: 5
+  fields:
+    fixture: 1
+    home_player: 2
+    away_player: 5
+- model: leagues.match
+  pk: 6
+  fields:
+    fixture: 1
+    home_player: 2
+    away_player: 6
+- model: leagues.match
+  pk: 7
+  fields:
+    fixture: 1
+    home_player: 3
+    away_player: 4
+- model: leagues.match
+  pk: 8
+  fields:
+    fixture: 1
+    home_player: 3
+    away_player: 5
+- model: leagues.match
+  pk: 9
+  fields:
+    fixture: 1
+    home_player: 3
+    away_player: 6
+
+################################################################################
+# Game
+################################################################################
+- model: leagues.game
+  pk: 1
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 2
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 3
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 4
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 5
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 6
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 7
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 8
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
+- model: leagues.game
+  pk: 9
+  fields:
+    match: 1
+    game_number: 1
+    home_score: 11
+    away_score: 9
