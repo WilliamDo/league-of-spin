@@ -1,0 +1,38 @@
+- model: leagues.league
+  pk: 1
+  fields:
+    league_name: West Essex
+- model: leagues.league
+  pk: 2
+  fields:
+    league_name: Central London
+- model: leagues.season
+  pk: 1
+  fields:
+    league: 1
+    date_start: 2017-09-01 00:00:00
+- model: leagues.season
+  pk: 2
+  fields:
+    league: 1
+    date_start: 2018-09-01 00:00:00
+- model: leagues.division
+  pk: 1
+  fields:
+    season: 1
+    division_number: 1
+- model: leagues.team
+  pk: 1
+  fields:
+    division: 1
+    team_name: Mossford A
+- model: leagues.team
+  pk: 2
+  fields:
+    division: 1
+    team_name: Mossford B
+- model: leagues.team
+  pk: 3
+  fields:
+    division: 1
+    team_name: Mossford C
