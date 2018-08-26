@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('table/<int:division_id>', views.table, name='table'),
-    path('fixture/<int:fixture_id>', views.fixture, name='table'),
+    path('fixture/<int:pk>', views.FixtureView.as_view(), name='table'),
 ]

@@ -20,13 +20,13 @@
         <table class="table text-center"> 
             <thead class="thead-dark">
                 <tr>
-                    <th>{{ home_team }} </th>
+                    <th>{{ fixture.home_team.team_name }} </th>
                     <th>{{ fixture.get_home_score }}-{{ fixture.get_away_score }}</th>
-                    <th>{{ away_team }}</th>
+                    <th>{{ fixture.away_team.team_name }}</th>
                 </tr>
             </thead>
             <tbody>
-            {% for match in matches %}    
+            {% for match in fixture.match_set.all %}    
                 <tr>
                     <td>
                         {{ match.home_player }}
