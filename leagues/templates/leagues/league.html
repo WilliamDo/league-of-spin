@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>League Table</title>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">LEAGUE OF SPIN</span>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ league.league_name }}</li>
+        </ol>
+    </nav>
+
+    <ol>
+    {% for season in league.season_set.all %}
+        <li><a href="{% url 'leagues:table' season.id %}">{{ season }}</a></li>
+    {% endfor %}
+    </ol>
+
+</div>
+
+</body>

@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
-from .models import Division, Fixture
+from .models import Division, Fixture, League
 
 # Create your views here.
 def index(request):
@@ -17,3 +17,7 @@ def table(request, division_id):
 class FixtureView(generic.DetailView):
     model = Fixture
     template_name = 'leagues/fixture.html'
+
+class LeagueView(generic.DetailView):
+    model = League
+    template_name = 'leagues/league.html'
