@@ -2,13 +2,14 @@ FROM python:3
 
 WORKDIR /usr/src/app
 
-COPY leagueofspin ./
-COPY leagues ./
+ADD leagueofspin leagueofspin
+ADD leagues leagues
 COPY manage.py ./
 
 RUN pip install django==2.2
-RUN python manage.py makemigrations leagues
+RUN pip install pyyaml
+RUN python manage.py makemigrations
 RUN python manage.py migrate
 RUN python manage.py loaddata dev
 
-CMD ["python", "manage.py", "runserver"]
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
