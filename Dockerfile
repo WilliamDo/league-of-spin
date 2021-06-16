@@ -6,7 +6,9 @@ ADD leagueofspin leagueofspin
 ADD leagues leagues
 COPY manage.py ./
 
-RUN pip install django==2.2
+ARG DJANGO_SUPERUSER_PASSWORD=changeit
+
+RUN pip install django==3.2
 RUN pip install pyyaml
 RUN python manage.py makemigrations
 RUN python manage.py migrate
